@@ -2,21 +2,54 @@ import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   colors: {
-    customColor: {
-      100: "#f5d6d9",
-      500: "#c34a60",
-      700: "#983242",
+    primary: {
+      500: "#330693",
+    },
+    secondary: {
+      500: "#8A53FF",
+    },
+    gray: {
+      500: "#20292E",
+    },
+    white: {
+      500: "#FFFFFF",
+    },
+  },
+  fonts: {
+    body: "Poppins, sans-serif",
+    heading: "Poppins, sans-serif",
+    navbar: "Poppins, sans-serif",
+  },
+  fontWeights: {
+    normal: "400",
+    medium: "500",
+    bold: "700",
+  },
+  textStyles: {
+    navbarItem: {
+      fontSize: "16px",
+      fontWeight: "400",
+      color: "white",
     },
   },
   components: {
     Button: {
       baseStyle: {
-        fontWeight: "bold",
+        fontWeight: "medium",
       },
       variants: {
         solid: {
-          bg: "customColor.500",
+          bg: "primary.500",
           color: "white",
+        },
+        navbar: {
+          bg: "white",
+          color: "primary.500",
+          padding: "13px 37px",
+          fontWeight: "400",
+          fontSize: "16px",
+          height: "50px",
+          borderRadius: "5px",
         },
       },
     },
