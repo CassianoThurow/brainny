@@ -17,12 +17,14 @@ import {
     return (
       <Flex
         as="nav"
+        position="relative"
         align="center"
         justify="space-between"
         wrap="wrap"
-        padding="2rem"
+        padding="3rem"
         bg="transparent"
         color="white"
+        zIndex={999}
       >
         <Flex align="center" mr={5}>
             <img src={Logo} alt="Logo" />

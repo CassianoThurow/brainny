@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { ChakraProvider } from '@chakra-ui/react'
 import { ApolloProvider } from '@apollo/client';
-import customTheme from './styles/customTheme.ts'
+import customTheme from './theme/customTheme.ts'
 import client from './api/apolloClient.ts'
 import App from './App.tsx'
 
