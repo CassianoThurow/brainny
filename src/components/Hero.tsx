@@ -15,7 +15,23 @@ const Hero = () => {
       justifyContent="space-between"
       color="white"
     >
-      <Box width={['100%', '50%']} padding="3rem">
+      {/* Container Box */}
+      <Box position="relative" width={['100%', '50%']} padding="3rem" zIndex="1">
+        {/* Background layer */}
+        <Box
+          position="absolute"
+          top="0"
+          left="0"
+          right="0"
+          bottom="0"
+          bg="secondary.500"
+          borderRadius="810px"
+          opacity="0.4"
+          filter="blur(150px)"
+          zIndex="-1"
+        ></Box>
+
+        {/* Content */}
         <Heading as="h2" variant="h2Style" marginBottom="1rem">
           Esquece o ponto manual
         </Heading>
@@ -49,18 +65,21 @@ const Hero = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 2 }}
+          zIndex="40"
+          position="relative"
         >
           <img
             src={HeroImg}
             alt="Descrição da imagem"
-            style={{ maxWidth: '100%', height: 'auto' }}
+            style={{ maxWidth: '100%', height: 'auto'}}
+            loading="lazy"
           />
         </MotionBox>
-        <Box position="absolute" top="-140px" right="0" zIndex='1'>
-          <img src={Smoke} alt="Descrição da imagem 1" />
+        <Box position="absolute" top="-140px" right="0" zIndex="1">
+          <img src={Smoke} alt="Descrição da imagem 1" loading="lazy" />
         </Box>
         <Box position="absolute" bottom="0" right="50%">
-          <img src={Star} alt="Descrição da imagem 2" />
+          <img src={Star} alt="Descrição da imagem 2" loading="lazy" />
         </Box>
       </Box>
     </Flex>
