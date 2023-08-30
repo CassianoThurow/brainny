@@ -31,32 +31,64 @@ const CrossIcon: React.FC = () => (
 const Card: React.FC<CardProps> = ({ title, price, userCount, features }) => {
   return (
     <Box
-      maxWidth="333px"
       borderRadius="10px"
       border="1px solid"
-      borderColor="var(--secundary-color, #8A53FF)"
+      borderColor="#8A53FF"
       background="rgba(255, 255, 255, 0.08)"
       backdropFilter="blur(2.5px)"
       p={4}
+      textAlign="center"
     >
-      <Text fontSize="2xl" fontWeight="bold">
+      <Text 
+        style={{
+          color: '#FFF',
+          fontFamily: 'Poppins',
+          fontSize: '50px',
+          fontWeight: 800,
+        }}
+      >
         {title}
       </Text>
-      <Text fontSize="xl" color="gray.500">
+      <Text 
+        style={{
+          color: '#FFF',
+          fontFamily: 'Poppins',
+          fontSize: '20px',
+          fontWeight: 400,
+        }}
+      >
         {price}
       </Text>
-      <Text fontSize="md" color="gray.400">
+      <Text 
+        style={{
+          color: 'var(--secundary-color, #8A53FF)',
+          fontFamily: 'Poppins',
+          fontSize: '16px',
+          fontWeight: 300,
+        }}
+      >
         {userCount}
       </Text>
       <List spacing={2} mt={4}>
         {features.map((feature, index) => (
           <ListItem
             key={index}
-            opacity={feature.available ? '1' : '0.4'}
+            style={{
+              opacity: feature.available ? '1' : '0.3',
+            }}
           >
             <HStack spacing={2}>
               {feature.available ? <CheckIcon /> : <CrossIcon />}
-              <Text>{feature.name}</Text>
+              <Text 
+                style={{
+                  color: '#FFF',
+                  fontFamily: 'Poppins',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                }}
+              >
+                {feature.name}
+              </Text>
             </HStack>
           </ListItem>
         ))}

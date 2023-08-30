@@ -49,8 +49,8 @@ import {
               bg="transparent"
             />
             <MenuList bg="transparent" padding={2}>
-              <MenuItem textStyle="navbarItem">Inicio</MenuItem>
-              <MenuItem textStyle="navbarItem">Planos</MenuItem>
+              <MenuItem bg="transparent" textStyle="navbarItem">Inicio</MenuItem>
+              <MenuItem bg="transparent" textStyle="navbarItem">Planos</MenuItem>
               <Button variant="navbar">Fazer Login</Button>
             </MenuList>
           </Menu>

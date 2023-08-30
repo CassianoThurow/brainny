@@ -11,6 +11,7 @@ import Smoke from './assets/smoke2.svg';
 import Star from './assets/star2.svg';
 import { motion, useAnimation } from 'framer-motion';
 import PlanSlider from './components/Caroussel';
+import Footer from './components/Footer';
 
 export default function App() {
   const controls = useAnimation();
@@ -98,6 +99,10 @@ export default function App() {
         <Box m="60px 0">
           <PlanSlider />
         </Box>
+      </Box>
+
+      <Box>
+        <Footer />
       </Box>
     </Box>
   );

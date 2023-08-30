@@ -54,13 +54,25 @@ const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
 
 const planData: PlanData[] = [
   {
+    title: 'Plano Bronze',
+    price: 'R$ 30',
+    userCount: 'Uso de 5 colaboradores',
+    features: [
+      { name: 'Área de meus registros', available: true },
+      { name: 'Dashboard', available: true },
+      { name: 'Acesso de 5 colaboradores', available: true },
+      { name: 'Suporte exclusivo', available: false },
+      { name: 'Email corporativo', available: false },
+    ],
+  },
+  {
     title: 'Plano Prata',
     price: 'R$ 50',
     userCount: 'Uso de 10 colaboradores',
     features: [
       { name: 'Área de meus registros', available: true },
       { name: 'Dashboard', available: true },
-      { name: 'Acesso de 10 colaboradores', available: false },
+      { name: 'Acesso de 10 colaboradores', available: true },
       { name: 'Suporte exclusivo', available: false },
       { name: 'Email corporativo', available: false },
     ],
@@ -72,33 +84,21 @@ const planData: PlanData[] = [
     features: [
       { name: 'Área de meus registros', available: true },
       { name: 'Dashboard', available: true },
-      { name: 'Acesso de 10 colaboradores', available: false },
-      { name: 'Suporte exclusivo', available: false },
+      { name: 'Acesso de 20 colaboradores', available: true },
+      { name: 'Suporte exclusivo', available: true },
       { name: 'Email corporativo', available: false },
     ],
   },
   {
     title: 'Plano Platina',
     price: 'R$ 200',
-    userCount: 'Uso ilimitado',
+    userCount: 'Acessos ilimitados',
     features: [
       { name: 'Área de meus registros', available: true },
       { name: 'Dashboard', available: true },
-      { name: 'Acesso de 10 colaboradores', available: false },
-      { name: 'Suporte exclusivo', available: false },
-      { name: 'Email corporativo', available: false },
-    ],
-  },
-  {
-    title: 'Plano Diamante',
-    price: 'R$ 500',
-    userCount: 'Uso ilimitado + benefícios exclusivos',
-    features: [
-      { name: 'Área de meus registros', available: true },
-      { name: 'Dashboard', available: true },
-      { name: 'Acesso de 10 colaboradores', available: false },
-      { name: 'Suporte exclusivo', available: false },
-      { name: 'Email corporativo', available: false },
+      { name: 'Acesso ilimitado', available: true },
+      { name: 'Suporte exclusivo', available: true },
+      { name: 'Email corporativo', available: true },
     ],
   },
 ];
@@ -118,6 +118,18 @@ const PlanSlider = () => {
     beforeChange: (current: number, next: number) => setCurrentSlide(next),
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 768, 
+        settings: {
+          slidesToShow: 1, 
+          slidesToScroll: 1, 
+          centerMode: true,
+          focusOnSelect: true,
+          centerPadding: '20px',
+        },
+      },
+    ],
   };
 
   const getSlideStyle = (index: number): CSSProperties => {
@@ -147,7 +159,7 @@ const PlanSlider = () => {
 
   return (
     <Box
-      maxW="xl"
+      maxW="100%"
       mx="auto"
       style={{ perspective: '1000px', overflow: 'hidden' }}
     >
